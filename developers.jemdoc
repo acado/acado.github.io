@@ -1,0 +1,11 @@
+# jemdoc: menu{MENU}{developers.html}
+= Developers
+
+: {[http://homes.esat.kuleuven.be/~mdiehl/ *Moritz Diehl*]} Scientific advisor
+: {[http://ferreau.eu/ *Hans Joachim Ferreau*]} Main developer
+: {*Boris Houska*} Main developer
+: {*Filip Logist*} Multi-objective optimization
+: {*Rien Quirynen*} Main developer
+: {*Dries Telen*} Optimal Experimental Design
+: {*Mattia Valerio*} Multi-objective optimal control
+: {[http://homes.esat.kuleuven.be/~mvukov/ *Milan Vukov*]} Main developer

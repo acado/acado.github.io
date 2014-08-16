@@ -1,0 +1,12 @@
+# jemdoc: menu{MENU}{extra_support.html}
+= Additional support
+
+In case you need help with with your own app, the simplest thing is simply to write to the [https://sourceforge.net/p/acado/discussion/ forum]. We are trying to read the forum posts regularly and to respond as soon as possible.
+
+*NOTE:* Posts and/or emails simply stating "*it does not work*" with very little explanation will be treated with low priority.
+ 
+The only thing we expect for this kind of support is that you [publications.html cite us], whenever you use the ACADO toolkit in scientific work (look [features.html here] for more info).
+
+If you want more help, we are always open for *academic* or *industrial cooperation*. An academic cooperation usually takes the form of a co-authorship of a journal paper, and an industrial cooperation involves a negotiated consulting contract. Please contact the us directly via the email [mailto:support@acadotoolkit.org support@acadotoolkit.org] if you are interested in this.
+
+*/ Found a bug or you want to get involved? / [getting_involved.html Look here]!*

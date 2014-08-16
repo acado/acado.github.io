@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>ACADO Toolkit</title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">ACADO Toolkit</div>
+<div class="menu-item"><a href="index.html" class="current">Overview</a></div>
+<div class="menu-item"><a href="features.html">Features</a></div>
+<div class="menu-item"><a href="licensing.html">Licensing</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="developers.html">Developers</a></div>
+<div class="menu-category">Installation</div>
+<div class="menu-item"><a href="install_linux.html">Linux</a></div>
+<div class="menu-item"><a href="install_osx.html">OS&nbsp;X</a></div>
+<div class="menu-item"><a href="install_windows.html">Windows</a></div>
+<div class="menu-category">MATLAB interface</div>
+<div class="menu-item"><a href="matlab_overview.html">Overview</a></div>
+<div class="menu-item"><a href="matlab_getting_started.html">Getting&nbsp;started</a></div>
+<div class="menu-category">Support</div>
+<div class="menu-item"><a href="documentation.html">Documentation</a></div>
+<div class="menu-item"><a href="extra_support.html">Additional</a></div>
+<div class="menu-category">For developers</div>
+<div class="menu-item"><a href="dev_guide.html">Guidelines</a></div>
+<div class="menu-item"><a href="getting_involved.html">Getting&nbsp;involved</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>ACADO Toolkit</h1>
+</div>
+<p><i> Toolkit for Automatic Control and Dynamic Optimization </i></p>
+<p>ACADO Toolkit is a software environment and algorithm collection for automatic control and dynamic optimization. It provides a general framework for using a great variety of algorithms for direct optimal control, including model predictive control, state and parameter estimation and robust optimization. ACADO Toolkit is implemented as self-contained C<tt></tt> code and comes along with user-friendly <a href="matlab_overview.html" target=&ldquo;blank&rdquo;>MATLAB interface</a>. The object-oriented design allows for convenient coupling of existing optimization packages and for extending it with user-written optimization routines. <a href="features.html" target=&ldquo;blank&rdquo;>Learn more about the features of ACADO Toolkit</a>.</p>
+<p><br /></p>
+<script type="text/javascript" src="http://www.openhub.net/p/667334/widgets/project_factoids_stats.js"></script>
+<h2>Blog</h2>
+<h3><b>16.08.2014</b></h3>
+<p>Webpages updated and moved to GitHub.</p>
+<h3><b>06.12.2013</b></h3>
+<p>Folks, there is a new, intermediate, release of ACADO. It mostly includes fixes, there are no new features at this point. In particular:</p>
+<ul>
+<li><p>in the code generation tool (CGT) we fixed a serious error concerning point constraints</p>
+</li>
+<li><p>Closed loop Simulink example in the CGT has been polished.</p>
+</li>
+<li><p>Minor fixes in the MATLAB interface and examples.</p>
+</li>
+</ul>
+<p>Not mentioned in the release notes of v1.2.0beta, there is support for OpenMP parallelization of the multiple shooting in the CGT (generated solver can be parallelized).</p>
+<p><b> Important </b> From now on, we are working on a new release, which will bring major changes in the API. Users are advised to use the stable branch. Code fixes are going to be pushed to this branch, mostly. Master branch (which is our main dev branch) will contain the new code, which is non-backwards compatible.</p>
+<p>Cheers,
+The ACADO dev team.</p>
+<h3><b>07.11.2013</b></h3>
+<p>We just released a new version of the toolkit, aka 1.2.0beta. We have fixed a lot of bugs and introduced a lot of new features. Most of the new features have been introduced in the Code Generation Tool. The tool supports</p>
+<ul>
+<li><p>NMPC and MHE</p>
+</li>
+<li><p>more general OCP formulations than before</p>
+</li>
+<li><p>ODE/DAE explicit and implicit integrators</p>
+</li>
+<li><p>continuous output integrators</p>
+</li>
+<li><p>The exported OCP solvers can employ qpOASES and FORCES QP solvers. For the detailed feature matrix please check the manual.</p>
+</li>
+</ul>
+<div id="footer">
+<div id="footer-text">
+Page generated 2014-08-16 16:30:38 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+		  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<a href="https://github.com/acado/acado"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Linux installation</title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">ACADO Toolkit</div>
+<div class="menu-item"><a href="index.html">Overview</a></div>
+<div class="menu-item"><a href="features.html">Features</a></div>
+<div class="menu-item"><a href="licensing.html">Licensing</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="developers.html">Developers</a></div>
+<div class="menu-category">Installation</div>
+<div class="menu-item"><a href="install_linux.html" class="current">Linux</a></div>
+<div class="menu-item"><a href="install_osx.html">OS&nbsp;X</a></div>
+<div class="menu-item"><a href="install_windows.html">Windows</a></div>
+<div class="menu-category">MATLAB interface</div>
+<div class="menu-item"><a href="matlab_overview.html">Overview</a></div>
+<div class="menu-item"><a href="matlab_getting_started.html">Getting&nbsp;started</a></div>
+<div class="menu-category">Support</div>
+<div class="menu-item"><a href="documentation.html">Documentation</a></div>
+<div class="menu-item"><a href="extra_support.html">Additional</a></div>
+<div class="menu-category">For developers</div>
+<div class="menu-item"><a href="dev_guide.html">Guidelines</a></div>
+<div class="menu-item"><a href="getting_involved.html">Getting&nbsp;involved</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>Linux installation</h1>
+</div>
+<p>Here is explained how to download, compile and use ACADO toolkit with <a href="http://www.cmake.org" target=&ldquo;blank&rdquo;>CMake</a> build system in Linux operating system. In particular, the focus is on Ubuntu distribution (or any Debian based distribution).</p>
+<h2>Prerequisites </h2>
+<p>For starters, one needs to download a few packages via apt-get package manager (you will need root privileges):</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+sudo apt-get install gcc g++ cmake git gnuplot doxygen graphviz
+</pre></div></div>
+<p><b>NOTE</b> The following packages are mandatory: gcc, g<tt></tt>, cmake and subversion. <a href="http://gnuplot.info" target=&ldquo;blank&rdquo;>Gnuplot</a>, <a href="http://www.doxygen.org" target=&ldquo;blank&rdquo;>Doxygen</a> and <a href="http://www.graphviz.org" target=&ldquo;blank&rdquo;>Graphviz</a> are optional. ACADO can work without those packages, but you will not be able to visualize results and/or generate API documentation.</p>
+<h2>Installation</h2>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+git clone https://github.com/acado/acado.git -b stable ACADOtoolkit
+</pre></div></div>
+<p><b>NOTE</b> We will refer to the ACADOtoolkit folder as &lt;ACADO_ROOT&gt;.</p>
+<p>Go to ACADOtoolkit folder and create a build folder for an out-of-source build:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+cd ACADOtoolkit
+mkdir build
+cd build
+</pre></div></div>
+<p>Run CMake to generate makefiles and start the building process:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+cmake ..
+make
+</pre></div></div>
+<p>Check whether the installation was successful by running an example:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+cd ..
+cd examples/getting_started
+./simple_ocp
+</pre></div></div>
+<p>Now you can proceed to the <a href="documentation.html" target=&ldquo;blank&rdquo;>documentation</a> related page, where you can find out more about tutorials, source code documentation etc.</p>
+<h3>Additonal</h3>
+<p>In case you want to compile ACADO in debug mode, you can run CMake like this:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+</pre></div></div>
+<h2>Alternative code download</h2>
+<ol>
+<li><p>current code from the <b>stable</b> branch <a href="http://www.acadotoolkit.org/zip/acadotoolkit-current-stable.zip" target=&ldquo;blank&rdquo;>acadotoolkit-current-stable.zip</a> or</p>
+</li>
+<li><p>current code from the <b>master</b> branch <a href="http://www.acadotoolkit.org/zip/acadotoolkit-current-master.zip" target=&ldquo;blank&rdquo;>acadotoolkit-current-master.zip</a>.</p>
+</li>
+</ol>
+<p>Those archives are automatically updated after each successfully compiled and tested commit we push to the GIT repository.</p>
+<p>After you download and unpack the archive you can follow the corresponding installation procedure &ndash; which depends on operating system used.</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2014-08-16 16:28:17 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+		  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<a href="https://github.com/acado/acado"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+</body>
+</html>
