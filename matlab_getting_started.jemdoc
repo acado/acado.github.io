@@ -35,7 +35,7 @@ MATLAB shows you a list of installed compilers. Enter the number corresponding t
         Template Options file for building gcc MEX-files
 
         2: /software/matlab/2009b/bin/mexopts.sh :
-        Template Options file for building MEX-files via...
+        Template Options file for building MEX-files via [...]
 
         0: Exit with no changes
 
