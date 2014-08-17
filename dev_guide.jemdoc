@@ -1,6 +1,6 @@
 # jemdoc: menu{MENU}{dev_guide.html}
 = Developer guidelines
 
-- This homepage is compiled using Jemdoc, but the mod which allows using MathJax for typesetting math (https://github.com/wsshin/jemdoc_mathjax). If you want to compile html, download first this package and the just type +make+ in the root folder of the repo acado.github.io.
+- This homepage is compiled using Jemdoc, but the mod which allows using MathJax for typesetting math ([https://github.com/wsshin/jemdoc_mathjax link]). If you want to compile html, download first this package and the just type +make+ in the root folder of the repo acado.github.io.
 
 
