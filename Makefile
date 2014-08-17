@@ -3,7 +3,7 @@ DOCS = \
 	install_linux install_osx install_windows \
 	matlab_overview matlab_getting_started \
 	documentation extra_support \
-	getting_involved dev_guide
+	getting_involved dev_guide known_issues
 HDOCS=$(addsuffix .html, $(DOCS))
 
 all: $(HDOCS) #publications.html
