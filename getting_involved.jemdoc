@@ -1,18 +1,10 @@
 # jemdoc: menu{MENU}{getting_involved.html}
 = Getting involved
 
-In case you find a bug, want to contribute or simply have an idea about an enhancement, you can make a ticket on the [https://github.com/acado/acado/issues issue tracker]. The source code of the toolkit [http://github.com/acado/acado is hosted on GitHub]. In case you are willing to contribute and solve a bug:
+In case you find a bug, want to contribute or simply have an idea about an enhancement, you can make a ticket on the [https://github.com/acado/acado/issues issue tracker]. The source code of the toolkit [http://github.com/acado/acado is hosted on GitHub]. In case you are willing to contribute and\/or solve a bug:
 
 -    [http://help.github.com/articles/fork-a-repo make your own fork on GitHub],
 -    work on the code and
 -    [http://help.github.com/articles/using-pull-requests make a pull request on GitHub].
 
 Thanx very much for understanding!
-
-When you contact us regarding the bugs/problems, please do the following:
-
-- state the code version:
-    -- send us output of the command: `git rev-parse HEAD` (this should work in Linux\/OS X\/Cygwin) or
-    -- send the contents of the file `VERSION.txt` if you have downloaded a zip file with the source code.
-- state the nature of the problem and
-- in case you cannot compile the code paste the **complete** compiler output. We can hardly help you without full error log.
