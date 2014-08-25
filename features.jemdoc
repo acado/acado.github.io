@@ -26,13 +26,13 @@ The first experimental validation of the Code Generation Tool on an overhead cra
 Comparison between condensing based NMPC solver that employs qpOASES QP solver and an NMPC solver based on structure exploiting QP solver FORCES can be found in \[7\].
 
 == References
- 
-.    Boris Houska, Hans Joachim Ferreau, Moritz Diehl. ACADO Toolkit - An Open-Source Framework for Automatic Control and Dynamic Optimization. Optimal Control Methods and Application, 32 (3), pp. 298-312, 2011.
-2.    Filip Logist, Boris Houska, Moritz Diehl, Jan van Impe. Fast Pareto set generation for nonlinear optimal control problems with multiple objectives. Structural and Multidisciplinary Optimization, 42(4), pp:591-603, 2010.
-.    Hans Joachim Ferreau, Boris Houska, Moritz Diehl. Numerical Methods for Embedded Optimisation and their Implementation within the ACADO Toolkit. In: 7th Conference - Computer Methods and Systems (CMS'09); R. Tadeusiewicz, A. Ligeza, W. Mitkowski, M. Szymkat (eds.), pp. 13-29, Oprogramowanie Naukowo- Techniczne, 2009.
-.    B. Houska, H.J. Ferreau, M. Diehl. An Auto-Generated Real-Time Iteration Algorithm for Nonlinear MPC in the Microsecond Range. Automatica, 47(10), pp:2279-2285, 2011.
-.    H.J. Ferreau, T. Kraus, M. Vukov, W. Saeys, M. Diehl. High-Speed Moving Horizon Estimation based on Automatic Code Generation, Proceedings of the 51th IEEE Conference on Decision and Control, 2012.
-.    M. Vukov, W. Van Loock, B. Houska, H.J. Ferreau, J. Swevers, M. Diehl. Experimental Validation of Nonlinear MPC on an Overhead Crane using Automatic Code Generation, The 2012 American Control Conference, Montreal, Canada.
-.    Vukov, M., Domahidi, A., Ferreau, H. J., Morari, M., Diehl, M. Auto-generated Algorithms for Nonlinear Model Predictive Control on Long and on Short Horizons, Proceedings of the 52nd Conference on Decision and Control (CDC), 2013.
+
+. Boris Houska, Hans Joachim Ferreau, Moritz Diehl. ACADO Toolkit - An Open-Source Framework for Automatic Control and Dynamic Optimization. Optimal Control Methods and Application, 32 (3), pp. 298-312, 2011.
+. Filip Logist, Boris Houska, Moritz Diehl, Jan van Impe. Fast Pareto set generation for nonlinear optimal control problems with multiple objectives. Structural and Multidisciplinary Optimization, 42(4), pp:591-603, 2010.
+. Hans Joachim Ferreau, Boris Houska, Moritz Diehl. Numerical Methods for Embedded Optimisation and their Implementation within the ACADO Toolkit. In: 7th Conference - Computer Methods and Systems (CMS'09); R. Tadeusiewicz, A. Ligeza, W. Mitkowski, M. Szymkat (eds.), pp. 13-29, Oprogramowanie Naukowo- Techniczne, 2009.
+. B. Houska, H.J. Ferreau, M. Diehl. An Auto-Generated Real-Time Iteration Algorithm for Nonlinear MPC in the Microsecond Range. Automatica, 47(10), pp:2279-2285, 2011.
+. H.J. Ferreau, T. Kraus, M. Vukov, W. Saeys, M. Diehl. High-Speed Moving Horizon Estimation based on Automatic Code Generation, Proceedings of the 51th IEEE Conference on Decision and Control, 2012.
+. M. Vukov, W. Van Loock, B. Houska, H.J. Ferreau, J. Swevers, M. Diehl. Experimental Validation of Nonlinear MPC on an Overhead Crane using Automatic Code Generation, The 2012 American Control Conference, Montreal, Canada.
+. Vukov, M., Domahidi, A., Ferreau, H. J., Morari, M., Diehl, M. Auto-generated Algorithms for Nonlinear Model Predictive Control on Long and on Short Horizons, Proceedings of the 52nd Conference on Decision and Control (CDC), 2013.
 
 Please consult [publications.html this] page on how to cite the toolkit.
