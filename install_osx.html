@@ -37,6 +37,11 @@
 <h1>OS X installation</h1>
 </div>
 <p>Here is explained how to download, compile and use ACADO toolkit with <a href="http://www.cmake.org" target=&ldquo;blank&rdquo;>CMake</a> build system in OS X. </p>
+<div class="infoblock">
+<div class="blocktitle">MATLAB installation</div>
+<div class="blockcontent">
+<p>The instructions below are for building of the C++ library. If you are looking for the instructions on how to use the MATLAB interface, please <i><a href="matlab_overview.html" target=&ldquo;blank&rdquo;>click here</a></i>.</p>
+</div></div>
 <h2>Prerequisites</h2>
 <p>One way to install necessary tools is via a package manager called Macports. Please read this <a href="http://www.macports.org/install.php" target=&ldquo;blank&rdquo;>webpage</a> (under &ldquo;Mac OS X Package (.pkg) Installer&rdquo;) to find out how to install MacPorts. After you install MacPorts, you can install those packages by typing the following command in a terminal (you will need root privileges):</p>
 <div class="codeblock">
@@ -50,7 +55,7 @@ sudo port select --set gcc mp-gcc47
 </pre></div></div>
 <p><b>NOTE</b> Gnuplot and Doxygen are optional. ACADO can work without Gnuplot and/or Doxygen, but in this case you will not be able to visualize results and/or generate API documentation.</p>
 <h2>Installation</h2>
-<p>Please download the toolkit code. Our suggestion is to always clone <b>stable</b> branch for the latest bug fixes:</p>
+<p>Please download the toolkit code. Our suggestion is to always clone <b>stable</b> branch:</p>
 <div class="codeblock">
 <div class="blockcontent"><pre>
 git clone https://github.com/acado/acado.git -b stable ACADOtoolkit
@@ -92,10 +97,9 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 </li>
 </ol>
 <p>Those archives are automatically updated after each successfully compiled and tested commit we push to the GIT repository.</p>
-<p>After you download and unpack the archive you can follow the corresponding installation procedure &ndash; which depends on operating system used.</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2014-08-17 10:40:19 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2014-08-25 16:07:17 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>
@@ -106,6 +110,5 @@ MathJax.Hub.Config({
 		  TeX: { equationNumbers: { autoNumber: "AMS" } }
 });
 </script>
-<a href="https://github.com/acado/acado"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 </body>
 </html>

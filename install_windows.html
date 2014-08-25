@@ -37,6 +37,11 @@
 <h1>Windows installation</h1>
 </div>
 <p>Here is explained how to download, compile and use ACADO toolkit with <a href="http://www.cmake.org" target=&ldquo;blank&rdquo;>CMake</a> build system in Windows.</p>
+<div class="infoblock">
+<div class="blocktitle">MATLAB installation</div>
+<div class="blockcontent">
+<p>The instructions below are for building of the C++ library. If you are looking for the instructions on how to use the MATLAB interface, please <i><a href="matlab_overview.html" target=&ldquo;blank&rdquo;>click here</a></i>.</p>
+</div></div>
 <h2>Installation for usage within <a href="http://www.cygwin.com" target=&ldquo;blank&rdquo;>Cygwin</a></h2>
 <h3>Prerequisites</h3>
 <ul>
@@ -71,7 +76,7 @@ C:\cygwin\bin\run.exe /usr/bin/bash.exe -l -c /usr/bin/startxwin.exe
 cp /usr/bin/make.exe /usr/bin/gmake.exe
 </pre></div></div>
 <h3>Installation</h3>
-<p>Please download the toolkit code. Our suggestion is to always clone <b>stable</b> branch for the latest bug fixes:</p>
+<p>Please download the toolkit code. Our suggestion is to always clone <b>stable</b> branch:</p>
 <div class="codeblock">
 <div class="blockcontent"><pre>
 git clone https://github.com/acado/acado.git -b stable ACADOtoolkit
@@ -130,7 +135,7 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 </li>
 <li><p>Open tortoise git application and fill in the fields as described <a href="https://code.google.com/p/tortoisegit/wiki" target=&ldquo;blank&rdquo;>here</a>:</p>
 <ul>
-<li><p>Enter the URL for cloning. Our suggestion is to always check out <b>stable</b> branch for the latest bug fixes <tt>https:<i></i>github.com/acado/acado.git</tt></p>
+<li><p>Enter the URL for cloning. Our suggestion is to always check out <b>stable</b> branch <tt>https:<i></i>github.com/acado/acado.git</tt></p>
 </li>
 <li><p>Point &ldquo;Directory&rdquo; field to the ACADOtoolkit folder.</p>
 </li>
@@ -183,10 +188,9 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 </li>
 </ol>
 <p>Those archives are automatically updated after each successfully compiled and tested commit we push to the GIT repository.</p>
-<p>After you download and unpack the archive you can follow the corresponding installation procedure &ndash; which depends on operating system used.</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2014-08-17 10:40:19 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2014-08-25 16:07:17 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>
@@ -197,6 +201,5 @@ MathJax.Hub.Config({
 		  TeX: { equationNumbers: { autoNumber: "AMS" } }
 });
 </script>
-<a href="https://github.com/acado/acado"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 </body>
 </html>

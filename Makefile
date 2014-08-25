@@ -12,6 +12,7 @@ index.html : blog.jemdoc
 install_linux.html :: install_unix_common.jemdoc download_zip.jemdoc
 install_osx.html :: install_unix_common.jemdoc download_zip.jemdoc
 install_windows.html :: install_unix_common.jemdoc download_zip.jemdoc
+matlab_getting_started.html: download_zip.jemdoc
 
 %.html : %.jemdoc MENU acado.conf
 	jemdoc -c acado.conf -o $@ $<

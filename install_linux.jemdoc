@@ -3,6 +3,11 @@
 
 Here is explained how to download, compile and use ACADO toolkit with [http://www.cmake.org CMake] build system in Linux operating system. In particular, the focus is on Ubuntu distribution (or any Debian based distribution).
 
+~~~
+{MATLAB installation}
+The instructions below are for building of the C\+\+ library. If you are looking for the instructions on how to use the MATLAB interface, please /[matlab_overview.html click here]/.
+~~~
+
 == Prerequisites 
 
 For starters, one needs to download a few packages via apt-get package manager (you will need root privileges):

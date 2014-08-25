@@ -3,6 +3,11 @@
 
 Here is explained how to download, compile and use ACADO toolkit with [http://www.cmake.org CMake] build system in OS X. 
 
+~~~
+{MATLAB installation}
+The instructions below are for building of the C\+\+ library. If you are looking for the instructions on how to use the MATLAB interface, please /[matlab_overview.html click here]/.
+~~~
+
 == Prerequisites
 
 One way to install necessary tools is via a package manager called Macports. Please read this [http://www.macports.org/install.php webpage] (under "Mac OS X Package (.pkg) Installer") to find out how to install MacPorts. After you install MacPorts, you can install those packages by typing the following command in a terminal (you will need root privileges):

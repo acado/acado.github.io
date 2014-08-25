@@ -5,5 +5,3 @@ If for any reason you cannot download the code using GIT or you do not want to u
 . current code from the *master* branch [http://www.acadotoolkit.org/zip/acadotoolkit-current-master.zip acadotoolkit-current-master.zip].
 
 Those archives are automatically updated after each successfully compiled and tested commit we push to the GIT repository.
-
-After you download and unpack the archive you can follow the corresponding installation procedure -- which depends on operating system used.

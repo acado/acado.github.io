@@ -1,5 +1,5 @@
 
-Please download the toolkit code. Our suggestion is to always clone *stable* branch for the latest bug fixes:
+Please download the toolkit code. Our suggestion is to always clone *stable* branch:
 ~~~
 {}{}
 git clone https://github.com/acado/acado.git -b stable ACADOtoolkit

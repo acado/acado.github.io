@@ -34,6 +34,5 @@ Comparison between condensing based NMPC solver that employs qpOASES QP solver a
 .    H.J. Ferreau, T. Kraus, M. Vukov, W. Saeys, M. Diehl. High-Speed Moving Horizon Estimation based on Automatic Code Generation, Proceedings of the 51th IEEE Conference on Decision and Control, 2012.
 .    M. Vukov, W. Van Loock, B. Houska, H.J. Ferreau, J. Swevers, M. Diehl. Experimental Validation of Nonlinear MPC on an Overhead Crane using Automatic Code Generation, The 2012 American Control Conference, Montreal, Canada.
 .    Vukov, M., Domahidi, A., Ferreau, H. J., Morari, M., Diehl, M. Auto-generated Algorithms for Nonlinear Model Predictive Control on Long and on Short Horizons, Proceedings of the 52nd Conference on Decision and Control (CDC), 2013.
-.    Vukov, M., Domahidi, A., Ferreau, H. J., Morari, M., Diehl, M. Auto-generated Algorithms for Nonlinear Model Predictive Control on Long and on Short Horizons, Proceedings of the 52nd Conference on Decision and Control (CDC), 2013.
 
 Please consult [publications.html this] page on how to cite the toolkit.

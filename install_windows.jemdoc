@@ -3,6 +3,11 @@
 
 Here is explained how to download, compile and use ACADO toolkit with [http://www.cmake.org CMake] build system in Windows.
 
+~~~
+{MATLAB installation}
+The instructions below are for building of the C\+\+ library. If you are looking for the instructions on how to use the MATLAB interface, please /[matlab_overview.html click here]/.
+~~~
+
 == Installation for usage within [http://www.cygwin.com Cygwin]
 
 === Prerequisites
@@ -49,7 +54,7 @@ Now you can download the toolkit code by cloning the GIT repository:
 
 - Open your file manager and make a folder called "ACADOtoolkit".
 - Open tortoise git application and fill in the fields as described [https://code.google.com/p/tortoisegit/wiki here]:
-    -- Enter the URL for cloning. Our suggestion is to always check out *stable* branch for the latest bug fixes +https://github.com\/acado\/acado.git+
+    -- Enter the URL for cloning. Our suggestion is to always check out *stable* branch +https://github.com\/acado\/acado.git+
     -- Point "Directory" field to the ACADOtoolkit folder.
     -- Check the "Branch" field and enter *stable*.
 - Click "OK" and wait for the code to be downloaded.
