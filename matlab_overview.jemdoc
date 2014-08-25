@@ -23,6 +23,6 @@ Link your models to ACADO:
 
 == Documentation & Examples
  
-Click [http://acado.sourceforge.net/matlab/doc/html/ here] to go to the class documentation or download the user [/p/acado/wiki/Documentation manual].
+Click [http://acado.sourceforge.net/matlab/doc/html/ here] to go to the class documentation or download the user [documentation.html manual].
 
 The folder +<ACADO_ROOT>\/interfaces\/matlab\/examples+ contains many examples explaining how to use the interface. *NOTE: do not use the C\+\+ examples you find on the ACADO website in Matlab, they will not always work although the syntax is very similar.*
