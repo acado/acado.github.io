@@ -59,7 +59,7 @@ Confirm the result by writing "y" and hitting enter:
 {}{}
 Please verify your choices: 
  
-Compiler: Microsoft Visual C++ 20XX Express  
+Compiler: Microsoft Visual C++ 20XX [...] 
 Location: C:\Program Files\Microsoft Visual Studio X.Y 
  
 Are these correct [y]/n?
