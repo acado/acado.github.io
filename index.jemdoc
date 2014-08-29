@@ -10,7 +10,9 @@ ACADO Toolkit is a software environment and algorithm collection for automatic c
 \n
 ~~~
 {}{raw}
+<div align="center">
 <script type="text/javascript" src="http://www.openhub.net/p/667334/widgets/project_factoids_stats.js"></script>
+</div>
 ~~~
 
 #include{blog.jemdoc}
