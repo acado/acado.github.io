@@ -47,7 +47,7 @@ MATLAB shows you a list of installed compilers. Enter the number corresponding t
 ~~~
 {}{}
 Select a compiler: 
-[1] Lcc-win32 C X.Y.Z in C:\PROGRA~1\MATLAB\R2009a\sys\lcc 
+[1] Lcc-win32 C X.Y.Z in C:\PROGRA~1\MATLAB\R20XX\sys\lcc 
 [2] Microsoft Visual C++ 20XX [...] in C:\Program Files...
                        
 [0] None 
