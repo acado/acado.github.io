@@ -147,6 +147,6 @@ You should see a report similar to the following one:
 
 convergence achieved.
 ~~~ 
-A graph will be drawn with the results who are stored in the variable 'out'. You're done!
+A graph will be drawn with the results which are stored in the variable 'out'. You're done!
 
 Would you like to read more? Download the user [documentation.html manual].
