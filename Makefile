@@ -1,5 +1,5 @@
 DOCS = \
-	index features licensing developers publications \
+	index features licensing developers publications blog \
 	install_linux install_osx install_windows \
 	matlab_overview matlab_getting_started \
 	documentation extra_support \
@@ -8,7 +8,6 @@ HDOCS=$(addsuffix .html, $(DOCS))
 
 all: $(HDOCS) #publications.html
 
-index.html : blog.jemdoc
 install_linux.html :: install_unix_common.jemdoc download_zip.jemdoc
 install_osx.html :: install_unix_common.jemdoc download_zip.jemdoc
 install_windows.html :: install_unix_common.jemdoc download_zip.jemdoc

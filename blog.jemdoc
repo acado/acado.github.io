@@ -1,11 +1,11 @@
+# jemdoc: menu{MENU}{blog.html}
+= Blog
 
-== Blog
-
-=== *16.08.2014*
+== 16.08.2014
 
 Webpages updated and moved to GitHub.
 
-=== *06.12.2013*
+== 06.12.2013
 
 Folks, there is a new, intermediate, release of ACADO. It mostly includes fixes, there are no new features at this point. In particular:
 - in the code generation tool (CGT) we fixed a serious error concerning point constraints
@@ -19,7 +19,7 @@ Not mentioned in the release notes of v1.2.0beta, there is support for OpenMP pa
 Cheers,
 The ACADO dev team.
 
-=== *07.11.2013*
+== 07.11.2013
 
 We just released a new version of the toolkit, aka 1.2.0beta. We have fixed a lot of bugs and introduced a lot of new features. Most of the new features have been introduced in the Code Generation Tool. The tool supports
 - NMPC and MHE
