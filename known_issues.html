@@ -37,21 +37,18 @@
 <div id="toptitle">
 <h1>Known issues</h1>
 </div>
+<p>A more complete list of issues can be found <a href="https://github.com/acado/acado/issues" target=&ldquo;blank&rdquo;><i>here</i></a>. In the following list are some <i>blockers</i> (a bit more serious ones):</p>
 <ul>
-<li><p>The master branch is under some (heavy) dev.</p>
+<li><p>BDF integrator does not work in the <b>master</b> branch; since introduction of Eigen3 for linear algebra (LA). In particular, the functionality has been disabled since LA routines have to be rebased to Eigen3 &ndash; this is missing.</p>
 </li>
 </ul>
 <ul>
-<li><p>BDF integrator does not work in the master branch; since introduction of Eigen3 for linear algebra (LA). In particular, the functionality has been disabled since LA routines have to be rebased to Eigen3 &ndash; this is missing.</p>
-</li>
-</ul>
-<ul>
-<li><p>The master branch cannot be compiled on Windows with Visual Studio; the compiler complains about Eigen3 code (some overloaded functions). This consequently means that MATLAB interface cannot be compiled on Windows.</p>
+<li><p>The <b>master</b> branch cannot be compiled on Windows with Visual Studio; the compiler complains about Eigen3 code (some overloaded functions). This consequently means that MATLAB interface cannot be compiled on Windows.</p>
 </li>
 </ul>
 <div id="footer">
 <div id="footer-text">
-Page generated 2014-08-29 12:45:49 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2014-08-29 12:57:52 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>

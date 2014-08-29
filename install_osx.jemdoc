@@ -20,7 +20,10 @@ Afterwards, select C and C\+\+ compilers:
 {}{}
 sudo port select --set gcc mp-gcc47
 ~~~
-*NOTE* Gnuplot and Doxygen are optional. ACADO can work without Gnuplot and\/or Doxygen, but in this case you will not be able to visualize results and\/or generate API documentation.
+~~~
+{NOTE}
+Gnuplot and Doxygen are optional. ACADO can work without Gnuplot and\/or Doxygen, but in this case you will not be able to visualize results and\/or generate API documentation.
+~~~
 
 == Installation
 #include{install_unix_common.jemdoc}

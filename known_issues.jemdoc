@@ -1,9 +1,8 @@
 # jemdoc: menu{MENU}{known_issues.html}
 = Known issues
 
-- The master branch is under some (heavy) dev.
+A more complete list of issues can be found [https://github.com/acado/acado/issues /here/]. In the following list are some /blockers/ (a bit more serious ones):
 
-- BDF integrator does not work in the master branch; since introduction of Eigen3 for linear algebra (LA). In particular, the functionality has been disabled since LA routines have to be rebased to Eigen3 -- this is missing.
+- BDF integrator does not work in the *master* branch; since introduction of Eigen3 for linear algebra (LA). In particular, the functionality has been disabled since LA routines have to be rebased to Eigen3 -- this is missing.
 
-- The master branch cannot be compiled on Windows with Visual Studio; the compiler complains about Eigen3 code (some overloaded functions). This consequently means that MATLAB interface cannot be compiled on Windows.
-
+- The *master* branch cannot be compiled on Windows with Visual Studio; the compiler complains about Eigen3 code (some overloaded functions). This consequently means that MATLAB interface cannot be compiled on Windows.

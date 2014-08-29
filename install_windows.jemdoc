@@ -35,7 +35,8 @@ cp /usr/bin/make.exe /usr/bin/gmake.exe
 == Installation for usage with Visual Studio
 
 ~~~
-*NOTE* Initial efforts have been made to compile ACADO with Visual Studio to be used from C\+\+. However, our time and man power are quite limited plus our main development platforms are Linux and OS X. We expect community to contribute here. In case you want to contribute, please take a look at [extra_support.html this] webpage. Thank you for your understanding!
+{NOTE}
+Initial efforts have been made to compile ACADO with Visual Studio to be used from C\+\+. However, our time and man power are quite limited plus our main development platforms are Linux and OS X. We expect community to contribute here. In case you want to contribute, please take a look at [extra_support.html this] webpage. Thank you for your understanding!
 ~~~
 
 === Prerequisites
@@ -45,8 +46,10 @@ cp /usr/bin/make.exe /usr/bin/gmake.exe
 - A tool for building the source code, called CMake, can be downloaded from [http://www.cmake.org/cmake/resources/software.html this] webpage.
 - Windows binaries for the visualization program Gnuplot can be downloaded [http://sourceforge.net/projects/gnuplot/files/gnuplot/ here].
 - A tool for generation of API documentation, Doxygen, can be download [http://www.stack.nl/~dimitri/doxygen/ here].
-
-*NOTE* Gnuplot and Doxygen are optional. ACADO can work without Gnuplot and\/or Doxygen, but in this case you will not be able to visualize results and\/or generate API documentation.
+~~~
+{NOTE}
+Gnuplot and Doxygen are optional. ACADO can work without Gnuplot and\/or Doxygen, but in this case you will not be able to visualize results and\/or generate API documentation.
+~~~
 
 === Installation
 
