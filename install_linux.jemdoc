@@ -17,7 +17,7 @@ sudo apt-get install gcc g++ cmake git gnuplot doxygen graphviz
 ~~~
 ~~~
 {NOTE}
-The following packages are mandatory: gcc, g++, cmake and subversion. [http://gnuplot.info Gnuplot], [http://www.doxygen.org Doxygen] and [http://www.graphviz.org Graphviz] are optional. ACADO can work without those packages, but you will not be able to visualize results and/or generate API documentation.
+The following packages are mandatory: gcc, g\+\+, cmake and subversion. [http://gnuplot.info Gnuplot], [http://www.doxygen.org Doxygen] and [http://www.graphviz.org Graphviz] are optional. ACADO can work without those packages, but you will not be able to visualize results and/or generate API documentation.
 ~~~
 
 == Installation

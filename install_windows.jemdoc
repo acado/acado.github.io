@@ -14,7 +14,7 @@ The instructions below are for building of the C\+\+ library. If you are looking
 - Go to the Cygwin website, download and execute the setup program. This may require administrator priveleges.
 - Follow the instructions of the installation program. Make sure that you chose an installation path without any spaces (e.g. c:/cygwin).
 - In "select packages" step, select at least the following packages for installation:
-    -- *Devel* category: binutils, cmake, (doxygen), gcc4, gcc4-core, gcc4-g++, make, git.
+    -- *Devel* category: binutils, cmake, (doxygen), gcc4, gcc4-core, gcc4-g\+\+, make, git.
     -- *Graphics* category: gnuplot.
     -- *X11* category: xinit.
 - Click next and wait for the automatic installation.

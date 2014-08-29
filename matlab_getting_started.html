@@ -41,11 +41,11 @@
 <h2>Step 1 - Installing a compiler</h2>
 <dl>
 <dt>I'm a LINUX / Mac user</dt>
-<dd><p>Make sure you have installed a recent version of the GCC compiler (at least version 4.1 but 4.2 or later is advised).</p></dd>
+<dd><p>Make sure you have installed a recent version of the GCC compiler (at least version 4.4).</p></dd>
 </dl>
 <dl>
 <dt>I'm a windows user</dt>
-<dd><p>Install the Microsoft Visual C++ 2010 Express Edition compiler. Click here to go to the download site. Continue this tutorial once you have installed this suite (you might be required to restart your PC first)</p></dd>
+<dd><p>Install the Microsoft Visual C++ compiler, at least version 2010. Continue this tutorial once you have installed this suite.</p></dd>
 </dl>
 <h2>Step 2 - Configuring MATLAB</h2>
 <p>Once a compiler is installed it needs to be linked to MATLAB. Open MATLAB (a recent version of MATLAB is required) and run in command window:</p>
@@ -66,10 +66,10 @@ Would you like mex to locate installed compilers [y]/n?
 <div class="blockcontent"><pre>
 The options files available for mex are:
 
-1: /software/matlab/2009b/bin/gccopts.sh :
+1: /software/matlab/20XX/bin/gccopts.sh :
    Template Options file for building gcc MEX-files
 
-2: /software/matlab/2009b/bin/mexopts.sh :
+2: /software/matlab/20XX/bin/mexopts.sh :
    Template Options file for building MEX-files via [...]
 
 0: Exit with no changes
@@ -81,8 +81,8 @@ Enter the number of the compiler (0-2):
 <div class="codeblock">
 <div class="blockcontent"><pre>
 Select a compiler:
-[1] Lcc-win32 C 2.4.1 in C:\PROGRA~1\MATLAB\R2009a\sys\lcc
-[2] Microsoft Visual C++ 2008 Express in C:\Program Files...
+[1] Lcc-win32 C X.Y.Z in C:\PROGRA~1\MATLAB\R2009a\sys\lcc
+[2] Microsoft Visual C++ 20XX [...] in C:\Program Files...
 
 [0] None
 
@@ -93,8 +93,8 @@ Compiler:
 <div class="blockcontent"><pre>
 Please verify your choices:
 
-Compiler: Microsoft Visual C++ 2008 Express
-Location: C:\Program Files\Microsoft Visual Studio 9.0
+Compiler: Microsoft Visual C++ 20XX Express
+Location: C:\Program Files\Microsoft Visual Studio X.Y
 
 Are these correct [y]/n?
 </pre></div></div>
@@ -156,7 +156,7 @@ Making ACADO...
 <div class="codeblock">
 <div class="blockcontent"><pre>
 ACADO successfully compiled.
-Needed to compile 176 file(s).
+Needed to compile XYZ file(s).
 
 If you need to restart Matlab, run this make file again
 to set all paths or run savepath in your console to
@@ -178,7 +178,7 @@ cd examples/ocp/getting_started/
 <div class="blockcontent"><pre>
 getting_started;
 </pre></div></div>
-<p>You should see</p>
+<p>You should see a report similar to the following one:</p>
 <div class="codeblock">
 <div class="blockcontent"><pre>
 [......]
@@ -203,7 +203,7 @@ convergence achieved.
 <p>Would you like to read more? Download the user <a href="documentation.html" target=&ldquo;blank&rdquo;>manual</a>.</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2014-08-29 17:20:35 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2014-08-29 23:29:15 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>

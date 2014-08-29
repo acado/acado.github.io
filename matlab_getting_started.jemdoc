@@ -5,9 +5,9 @@ To install and use the MATLAB interface you need to have a recent MATLAB version
     
 == Step 1 - Installing a compiler
      
-: {I'm a LINUX / Mac user} Make sure you have installed a recent version of the GCC compiler (at least version 4.1 but 4.2 or later is advised).
+: {I'm a LINUX / Mac user} Make sure you have installed a recent version of the GCC compiler (at least version 4.4).
     
-: {I'm a windows user} Install the Microsoft Visual C\+\+ 2010 Express Edition compiler. Click here to go to the download site. Continue this tutorial once you have installed this suite (you might be required to restart your PC first)
+: {I'm a windows user} Install the Microsoft Visual C\+\+ compiler, at least version 2010. Continue this tutorial once you have installed this suite.
     
 == Step 2 - Configuring MATLAB
      
@@ -31,10 +31,10 @@ MATLAB shows you a list of installed compilers. Enter the number corresponding t
 {}{}
 The options files available for mex are:
     
-1: /software/matlab/2009b/bin/gccopts.sh :
+1: /software/matlab/20XX/bin/gccopts.sh :
    Template Options file for building gcc MEX-files
 
-2: /software/matlab/2009b/bin/mexopts.sh :
+2: /software/matlab/20XX/bin/mexopts.sh :
    Template Options file for building MEX-files via [...]
 
 0: Exit with no changes
@@ -47,8 +47,8 @@ MATLAB shows you a list of installed compilers. Enter the number corresponding t
 ~~~
 {}{}
 Select a compiler: 
-[1] Lcc-win32 C 2.4.1 in C:\PROGRA~1\MATLAB\R2009a\sys\lcc 
-[2] Microsoft Visual C++ 2008 Express in C:\Program Files...
+[1] Lcc-win32 C X.Y.Z in C:\PROGRA~1\MATLAB\R2009a\sys\lcc 
+[2] Microsoft Visual C++ 20XX [...] in C:\Program Files...
                        
 [0] None 
                        
@@ -59,8 +59,8 @@ Confirm the result by writing "y" and hitting enter:
 {}{}
 Please verify your choices: 
  
-Compiler: Microsoft Visual C++ 2008 Express  
-Location: C:\Program Files\Microsoft Visual Studio 9.0 
+Compiler: Microsoft Visual C++ 20XX Express  
+Location: C:\Program Files\Microsoft Visual Studio X.Y 
  
 Are these correct [y]/n?
 ~~~ 
@@ -103,7 +103,7 @@ and after a while when the compilation is finished:
 ~~~
 {}{}
 ACADO successfully compiled.
-Needed to compile 176 file(s).
+Needed to compile XYZ file(s).
 
 If you need to restart Matlab, run this make file again
 to set all paths or run savepath in your console to
@@ -126,7 +126,7 @@ The file getting\_started.m contains the ACADO syntax to setup and execute a sim
 {}{}
 getting_started;
 ~~~
-You should see
+You should see a report similar to the following one:
 ~~~
 {}{}
 [......]

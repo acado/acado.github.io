@@ -4,7 +4,7 @@ Please download the toolkit code. Our suggestion is to always clone *stable* bra
 {}{}
 git clone https://github.com/acado/acado.git -b stable ACADOtoolkit
 ~~~
-*NOTE* We will refer to the ACADOtoolkit folder as <ACADO_ROOT>.
+We will refer to the ACADOtoolkit folder as <ACADO_ROOT>.
 
 Go to ACADOtoolkit folder and create a build folder for an out-of-source build:
 ~~~
