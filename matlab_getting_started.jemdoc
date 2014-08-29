@@ -5,9 +5,9 @@ To install and use the MATLAB interface you need to have a recent MATLAB version
     
 == Step 1 - Installing a compiler
      
-: {I'm a LINUX / Mac user} Make sure you have installed a recent version of the GCC compiler (at least version 4.4).
+: {I'm a Linux / Mac user} Make sure you have installed a recent version of the GCC compiler (at least version 4.4).
     
-: {I'm a windows user} Install the Microsoft Visual C\+\+ compiler, at least version 2010. Continue this tutorial once you have installed this suite.
+: {I'm a Windows user} Make sure you have installed a recent version the Microsoft Visual C\+\+ compiler, at least version 2010.
     
 == Step 2 - Configuring MATLAB
      
