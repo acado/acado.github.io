@@ -2,7 +2,7 @@
 = Developer guidelines
 
 This homepage is compiled using +jemdoc+, but the mod which allows using +MathJax+ for typesetting math. If you want to compile html:
-    . Check-out [https://github.com/wsshin/jemdoc_mathjax +jemdoc\+MathJax+] repo,
-    . Check-out [https://github.com/acado/acado.github.io acado.github.io] repo,
-    . Type +make+. Voila!
+    . check-out [https://github.com/wsshin/jemdoc_mathjax +jemdoc\+MathJax+] repo, and update your +PYTHONPATH+ to include the this repo,
+    . check-out [https://github.com/acado/acado.github.io acado.github.io] repo, +cd+ to the appropriate folder and
+    . type +make+. Voila!
 
