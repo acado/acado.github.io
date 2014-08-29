@@ -147,12 +147,6 @@ You should see
 
 convergence achieved.
 ~~~ 
-A graph will be drawn with the results who are stored in the variable 'out'.
+A graph will be drawn with the results who are stored in the variable 'out'. You're done!
 
-You're done!
- 
-Everything OK? Then your done and you can start using the ACADO Toolkit MATLAB Interface. Please report any bugs at our forum.
-
-If you would like to help us getting an idea on which platforms the MATLAB interface runs, please execute "<ACADO_ROOT>\/interfaces\/matlab\/getversioninformation.m" in your command window and post the results at our forum .
-
-Would you like to read more? Download the user manual.
+Would you like to read more? Download the user [documentation.html manual].
