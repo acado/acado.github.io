@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>The ACADO Code Generation Tool</title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">ACADO Toolkit</div>
+<div class="menu-item"><a href="index.html">Overview</a></div>
+<div class="menu-item"><a href="features.html">Features</a></div>
+<div class="menu-item"><a href="licensing.html">Licensing</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="developers.html">Developers</a></div>
+<div class="menu-item"><a href="blog.html">Blog</a></div>
+<div class="menu-category">Installation</div>
+<div class="menu-item"><a href="install_linux.html">Linux</a></div>
+<div class="menu-item"><a href="install_osx.html">OS&nbsp;X</a></div>
+<div class="menu-item"><a href="install_windows.html">Windows</a></div>
+<div class="menu-category">Interfaces</div>
+<div class="menu-item"><a href="matlab_overview.html">MATLAB&nbsp;interface</a></div>
+<div class="menu-category">The Code <br /> Generation Tool</div>
+<div class="menu-item"><a href="cgt_overview.html" class="current">Overview</a></div>
+<div class="menu-category">Support</div>
+<div class="menu-item"><a href="documentation.html">Documentation</a></div>
+<div class="menu-item"><a href="extra_support.html">Additional</a></div>
+<div class="menu-category">For developers</div>
+<div class="menu-item"><a href="dev_guide.html">Guidelines</a></div>
+<div class="menu-item"><a href="known_issues.html">Known&nbsp;issues</a></div>
+<div class="menu-item"><a href="getting_involved.html">Getting&nbsp;involved</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>The ACADO Code Generation Tool</h1>
+</div>
+<h2>Nonlinear Model Predictive Control and Moving Horizon Estimation</h2>
+<p>The tool allows to export optimized, highly efficient C-code to solve <i>nonlinear model predictive control (<b>NMPC</b>)</i> of the following form:</p>
+<p style="text-align:center">
+\[
+\begin{align}
+\displaystyle
+\min_{
+	\begin{array}{c}
+	x_0, \ldots, x_{N} \\
+	u_0, \ldots, u_{N-1}
+\end{array}} &amp;
+	\displaystyle\sum_{k=0}^{N-1}
+	||h(x_k,u_k) - \tilde{y}_k ||^2_{W_{k}} +||h_{N}(x_N) - \tilde{y}_N||^2_{W_{N}}
+	\label{eq:nmpc_obj}\\[1em]
+\text{s.t.} \quad\quad &amp; x_0 = \hat x_0 \label{eq:nmpc_init_con}\\[0.5em]
+&amp; x_{k+1} = F(x_k, u_k, z_k),\ \text{for } k = 0, \ldots, N-1 \label{eq:nmpc_dynamics}\\[0.5em]
+&amp; x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:nmpc_box_states}\\[0.5em]
+&amp; u_k^\text{lo} \leq u_k \leq u_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:nmpc_box_controls}\\[0.5em]
+&amp; r_k^\text{lo} \leq r_k(x_k, u_k) \leq r_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:nmpc_path_con}\\[0.5em]
+&amp; r_N^\text{lo} \leq r_N(x_n) \leq r_N^\text{up} \label{eq:nmpc_point_con}
+\end{align}
+\]
+</p><p>Here, \(x\in\text{R}^{n_x}\) denotes the differential state, \(u\in\text{R}^{n_u}\) the control input, \(z\in\text{R}^{n_z}\) the algebraic variable, and \(\hat{x}_0\in\text{R}^{n_x}\) denotes the current state measurement. Reference functions in \(\eqref{eq:nmpc_obj}\) are denoted with \(h\in\text{R}^{n_y}\) and \(h_N\in\text{R}^{n_{y,N}}\), and the weighting matrices are denoted with \(W_k\in\text{R}^{n_y\times n_y}\) and \(W_N\in\text{R}^{n_{y,N}\times n_{y,N}}\). Variables \(\tilde{y}_k\in\text{R}^{n_y}\) and \(\tilde{y}_N\in\text{R}^{n_{y,N}}\) denote time-varying references.</p>
+<p>\(\underline u \leq \overline u\in\text{R}^{n_x}\) and \(\underline x \leq \overline x\in\text{R}^{n_u}\), \(\eqref{eq:nmpc_box_controls}\) and \(\eqref{eq:nmpc_box_states}\), are bounds on control inputs and states control bounds, respectively, that also might change along the horizon.</p>
+<p>Equations \(\eqref{eq:nmpc_path_con}\) and \(\eqref{eq:nmpc_point_con}\) define path and point constraint, respectively, with constraint functions \(r_k\in\text{R}^{n_{r,k}}\) and \(r_N\in\text{R}^{n_{r,N}}\). The right-hand side function \(F\) defined a dicretized ordinary differential equation (ODE) or differential algebraic equation (DAE).</p>
+<p>Similarly, <i>moving horizon estimation (<b>MHE</b>)</i> problems of the following form can be formulated:</p>
+<p style="text-align:center">
+\[
+\begin{align}
+\displaystyle
+\min_{
+	\begin{array}{c}
+	x_0, \ldots, x_{N} \\
+	u_0, \ldots, u_{N-1}
+\end{array}} &amp;
+	||x_0 - x_\text{AC}||^2_{S_\text{AC}} +
+	\displaystyle\sum_{k=0}^{N-1}
+	||h(x_k,u_k) - \tilde{y}_k ||^2_{W_{k}} +\||h_{N}(x_N) - \tilde{y}_N||^2_{W_{N}}
+	\label{eq:mhe_obj}\\[1em]
+\text{s.t.} \quad\quad &amp; x_{k+1} = F(x_k, u_k, z_k),\ \text{for } k = 0, \ldots, N-1 \label{eq:mhe_dynamics}\\[0.5em]
+&amp; x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:mhe_box_states}\\[0.5em]
+&amp; u_k^\text{lo} \leq u_k \leq u_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:mhe_box_controls}\\[0.5em]
+&amp; r_k^\text{lo} \leq r_k(x_k, u_k) \leq r_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:mhe_path_con}\\[0.5em]
+&amp; r_N^\text{lo} \leq r_N(x_n) \leq r_N^\text{up}. \label{eq:mhe_point_con}
+\end{align}
+\]
+</p><p>In the context of MHE, functions \(h\) and \(h_N\) denote measurement functions. The optional first term in \(\eqref{eq:mhe_obj}\) denotes the arrival cost.</p>
+<p>The tool exports highly efficient C-code for solving nonlinear MPC and MHE problems by means of the real-time iteration scheme with Gauss-Newton Hessian approximation. Discretization of the time-continuous ODEs and DAEs is done via shooting techniques. The resulting large but sparse QP can be optionaly condensed and passed to dense linear algebra QP solver <a href="www.qpoases.org" target=&ldquo;blank&rdquo;>qpOASES</a> (embedded variant) that is employing an active set method. Alternatively, one can use:</p>
+<ul>
+<li><p>structure exploiting QCQP solver <a href="forces.ethz.ch" target=&ldquo;blank&rdquo;>FORCES</a> that is implementing an interior point method (IPM) or</p>
+</li>
+<li><p>structure exploiting a dual decomposition based QP solver <a href="https://github.com/jfrasch/qpDUNES/wiki" target=&ldquo;blank&rdquo;>qpDUNES</a> or</p>
+</li>
+<li><p>structure exploiting IPM QP solver <a href="https://github.com/giaf/hpmpc" target=&ldquo;blank&rdquo;>HPMPC</a>.</p>
+</li>
+</ul>
+<p>More details on the implemented algorithms and how the toolkit exports them can be found in the manual or in the <a href="publications.html">publications</a>.</p>
+<p>As a final product, the user gets a fully customized OCP solver (in C-code). Software layout of such a solver is illustrated below.</p>
+<div align="center">
+<img src="images/acado_cgt_exported_solver.png" alt="The exported solver layout" width="480">
+</div>
+<h2>Standalone integrators</h2>
+<p>Embedded integrators with efficient sensitivity propagation are part of the crucial algorithmic tools necessary to implement real-time optimal control. The online linearization of constraints imposing the model equations, is typically the bottleneck of the RTI scheme. Targeting real-time applications, a deterministic runtime for the used integration methods is also rather important. Parameters such as the step size and order of the method are therefore kept fixed. The automatic generation of tailored Explicit Runge-Kutta (ERK) methods using the Variational Differential Equations (VDE) for computing sensitivities has been presented and shown practical in [Houska2011, Vukov2012]. This idea was extended in the more recent work on code generation for Implicit Runge-Kutta (IRK) methods [Quirynen2012a]. Tailored techniques for the efficient computation of their sensitivity information have been discussed in [Quirynen2012]. The application of these embedded, implicit solvers to systems of Differential Algebraic Equations (DAE) and the motivation for continuous output has been presented in [Quirynen2013]. The latter has been shown very useful for the implementation of MHE with multi-rate measurements, although it also has possible applications for NMPC as illustrated in [Quirynen2014a]. A three stage model formulation is discussed in [Quirynen2013a] as a way to exploit common linear subsystems in models for nonlinear optimal control. Novel algorithms can be easily prototyped by employing these auto generated integrators within an optimization framework.</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2014-08-30 15:27:25 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+		  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+</body>
+</html>

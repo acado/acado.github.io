@@ -11,9 +11,11 @@ Installation
 	OS X [install_osx.html]
 	Windows [install_windows.html]
 
-MATLAB interface
-	Overview [matlab_overview.html]
-	Getting started [matlab_getting_started.html]
+Interfaces
+	MATLAB interface [matlab_overview.html]
+
+The Code \n Generation Tool
+	Overview [cgt_overview.html]
 
 Support
 	Documentation [documentation.html]

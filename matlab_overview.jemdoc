@@ -16,4 +16,154 @@ Link your models to ACADO:
 -    Provide optional Jacobians for faster calculations
 ~~~
 
-To install and use the Matlab interface you need to have a recent Matlab version and a recent C\+\+ compiler installed. Follow [matlab_getting_started.html these steps] to get you started in a few minutes.
+== Getting started with the MATLAB interface
+     
+To install and use the MATLAB interface you need to have a recent MATLAB version and a C\+\+ compiler installed. Follow these steps to get you started in a few minutes.
+    
+=== Step 1 - Installing a compiler
+     
+: {I'm a Linux / Mac user} Make sure you have installed a recent version of the GCC compiler (at least version 4.4).
+    
+: {I'm a Windows user} Make sure you have installed a recent version the Microsoft Visual C\+\+ compiler, at least version 2010.
+    
+=== Step 2 - Configuring MATLAB
+     
+Once a compiler is installed it needs to be linked to MATLAB. Open MATLAB (a recent version of MATLAB is required) and run in command window:
+~~~
+{}{}
+>> mex -setup;
+~~~
+MATLAB returns:
+~~~
+{}{}    
+Please choose your compiler for building external interface (MEX) files: 
+Would you like mex to locate installed compilers [y]/n?
+~~~     				    
+Type "y" and hit enter.
+    
+*I'm a LINUX / Mac user*
+    
+MATLAB shows you a list of installed compilers. Enter the number corresponding to the GCC compiler (in this case 1) and hit enter.
+~~~
+{}{}
+The options files available for mex are:
+    
+1: /software/matlab/20XX/bin/gccopts.sh :
+   Template Options file for building gcc MEX-files
+
+2: /software/matlab/20XX/bin/mexopts.sh :
+   Template Options file for building MEX-files via [...]
+
+0: Exit with no changes
+
+Enter the number of the compiler (0-2):
+~~~
+*I'm a windows user*
+
+MATLAB shows you a list of installed compilers. Enter the number corresponding to the Visual C\+\+ compiler (in this case 2) and hit enter.
+~~~
+{}{}
+Select a compiler: 
+[1] Lcc-win32 C X.Y.Z in C:\PROGRA~1\MATLAB\R20XX\sys\lcc 
+[2] Microsoft Visual C++ 20XX [...] in C:\Program Files...
+                       
+[0] None 
+                       
+Compiler:
+~~~
+Confirm the result by writing "y" and hitting enter:
+~~~
+{}{}
+Please verify your choices: 
+ 
+Compiler: Microsoft Visual C++ 20XX [...] 
+Location: C:\Program Files\Microsoft Visual Studio X.Y 
+ 
+Are these correct [y]/n?
+~~~ 
+=== Step 3 - Building the ACADO interface
+
+Please download the toolkit code. Our suggestion is to always clone the *stable* branch:
+- Linux and OS X users can check-out the code using [http://git-scm.com GIT] directly from a terminal. Please execute the following command in a terminal:
+~~~
+{}{}
+git clone https://github.com/acado/acado.git -b stable ACADOtoolkit
+~~~
+- Windows users can use e.g. [https://code.google.com/p/tortoisegit/ TortoiseGit]:
+  -- Open your file manager and make a folder called "ACADOtoolkit".
+  -- Open tortoise git application and fill in the fields as described [https://code.google.com/p/tortoisegit/wiki here]:
+     --- Enter the URL for cloning. Our suggestion is to always check out *stable* branch +https://github.com\/acado\/acado.git+
+     --- Point "Directory" field to the ACADOtoolkit folder.
+     --- Check the "Branch" field and enter *stable*.
+  -- Click "OK" and wait for the code to be downloaded.
+
+#include{download_zip.jemdoc}
+
+Please note you do not need to build ACADO at this stage, you just need to download it. We will refer to the main ACADO folder (+ACADOtoolkit+) as <ACADO_ROOT>. Open Matlab in this directory.
+
+Navigate to the MATLAB installation directory by running:
+~~~
+{}{}
+cd interfaces/matlab/;
+~~~
+You are now ready to compile the ACADO interface. This compilation will take several minutes but needs to be done only once. Run "make" in your command window:
+~~~
+{}{}
+make clean all;
+~~~
+You will see:
+~~~
+{}{}
+Making ACADO... 
+~~~
+and after a while when the compilation is finished:
+~~~
+{}{}
+ACADO successfully compiled.
+Needed to compile XYZ file(s).
+
+If you need to restart Matlab, run this make file again
+to set all paths or run savepath in your console to
+save the current search path for future sessions.
+~~~
+ACADO has now been compiled. As the text indicated every time you restart MATLAB you need to run "make" again to set all paths. When running "make" again no new files need to be compiled and the process will only take a few seconds. However, it is easier to save your paths for future Matlab session. Do so by running "savepath" in your command window (this step is optional).
+~~~
+{}{}
+savepath;
+~~~
+=== Step 4 - Running your first example
+ 
+We will now run the OCP getting started example:
+~~~
+{}{}
+cd examples/ocp/getting_started/
+~~~
+The file getting\_started.m contains the ACADO syntax to setup and execute a simple Optimal Control Problem. Run "getting\_started" in your terminal to test the execution:
+~~~
+{}{}
+getting_started;
+~~~
+You should see a report similar to the following one:
+~~~
+{}{}
+[......]
+
+ 1:  KKT tolerance = 2.016e-001     objective value = 6.4478e-001
+ 2:  KKT tolerance = 2.074e+000     objective value = 4.3516e-001
+ 3:  KKT tolerance = 1.484e-001     objective value = -2.3787e+000
+ 4:  KKT tolerance = 9.130e-002     objective value = -2.3441e+000
+ 5:  KKT tolerance = 1.035e-001     objective value = -2.4338e+000
+ 6:  KKT tolerance = 5.587e-002     objective value = -2.5326e+000
+ 7:  KKT tolerance = 2.741e-002     objective value = -2.5766e+000
+ 8:  KKT tolerance = 1.839e-002     objective value = -2.5959e+000
+ 9:  KKT tolerance = 1.543e-002     objective value = -2.6105e+000
+10:  KKT tolerance = 1.494e-002     objective value = -2.6258e+000
+11:  KKT tolerance = 5.624e-003     objective value = -2.6404e+000
+12:  KKT tolerance = 1.584e-004     objective value = -2.6456e+000
+13:  KKT tolerance = 1.214e-008     objective value = -2.6456e+000
+
+convergence achieved.
+~~~ 
+A graph will be drawn with the results which are stored in the variable 'out'. You're done!
+
+Would you like to read more? Download the user [documentation.html manual].
