@@ -56,8 +56,8 @@ Similarly, /moving horizon estimation (*MHE*)/ problems of the following form ca
 
 In the context of MHE, functions $h$ and $h_N$ denote measurement functions. The optional first term in $\eqref{eq:mhe_obj}$ denotes the arrival cost.
 
-The tool exports highly efficient C-code for solving nonlinear MPC and MHE problems by means of the real-time iteration scheme with Gauss-Newton Hessian approximation. Discretization of the time-continuous ODEs and DAEs is done via shooting techniques. The resulting large but sparse QP can be optionaly condensed and passed to dense linear algebra QP solver [www.qpoases.org qpOASES] (embedded variant) that is employing an active set method. Alternatively, one can use:
-- structure exploiting QCQP solver [forces.ethz.ch FORCES] that is implementing an interior point method (IPM) or
+The tool exports highly efficient C-code for solving nonlinear MPC and MHE problems by means of the real-time iteration scheme with Gauss-Newton Hessian approximation. Discretization of the time-continuous ODEs and DAEs is done via shooting techniques. The resulting large but sparse QP can be optionaly condensed and passed to dense linear algebra QP solver [http://www.qpoases.org qpOASES] (embedded variant) that is employing an active set method. Alternatively, one can use:
+- structure exploiting QCQP solver [http://forces.ethz.ch FORCES] that is implementing an interior point method (IPM) or
 - structure exploiting a dual decomposition based QP solver [https://github.com/jfrasch/qpDUNES/wiki qpDUNES] or
 - structure exploiting IPM QP solver [https://github.com/giaf/hpmpc HPMPC].
 
