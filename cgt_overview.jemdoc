@@ -19,8 +19,8 @@ The tool allows to export optimized, highly efficient C-code to solve /nonlinear
 	\label{eq:nmpc_obj}\\[1em]
 \text{s.t.} \quad\quad & x_0 = \hat x_0 \label{eq:nmpc_init_con}\\[0.5em]
 & x_{k+1} = F(x_k, u_k, z_k),\ \text{for } k = 0, \ldots, N-1 \label{eq:nmpc_dynamics}\\[0.5em]
-& x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:nmpc_box_states}\\[0.5em]
 & u_k^\text{lo} \leq u_k \leq u_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:nmpc_box_controls}\\[0.5em]
+& x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:nmpc_box_states}\\[0.5em]
 & r_k^\text{lo} \leq r_k(x_k, u_k) \leq r_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:nmpc_path_con}\\[0.5em]
 & r_N^\text{lo} \leq r_N(x_n) \leq r_N^\text{up} \label{eq:nmpc_point_con}
 \end{align}
@@ -28,7 +28,7 @@ The tool allows to export optimized, highly efficient C-code to solve /nonlinear
 
 Here, $x\in\text{R}^{n_x}$ denotes the differential state, $u\in\text{R}^{n_u}$ the control input, $z\in\text{R}^{n_z}$ the algebraic variable, and $\hat{x}_0\in\text{R}^{n_x}$ denotes the current state measurement. Reference functions in $\eqref{eq:nmpc_obj}$ are denoted with $h\in\text{R}^{n_y}$ and $h_N\in\text{R}^{n_{y,N}}$, and the weighting matrices are denoted with $W_k\in\text{R}^{n_y\times n_y}$ and $W_N\in\text{R}^{n_{y,N}\times n_{y,N}}$. Variables $\tilde{y}_k\in\text{R}^{n_y}$ and $\tilde{y}_N\in\text{R}^{n_{y,N}}$ denote time-varying references.
 
-$\underline u \leq \overline u\in\text{R}^{n_x}$ and $\underline x \leq \overline x\in\text{R}^{n_u}$, $\eqref{eq:nmpc_box_controls}$ and $\eqref{eq:nmpc_box_states}$, are bounds on control inputs and states control bounds, respectively, that also might change along the horizon.
+Bounds $\underline u \leq \overline u\in\text{R}^{n_u}$ on control inputs $\eqref{eq:nmpc_box_controls}$ and $\underline x \leq \overline x\in\text{R}^{n_x}$ on states $\eqref{eq:nmpc_box_states}$ can change along the horizon.
 
 Equations $\eqref{eq:nmpc_path_con}$ and $\eqref{eq:nmpc_point_con}$ define path and point constraint, respectively, with constraint functions $r_k\in\text{R}^{n_{r,k}}$ and $r_N\in\text{R}^{n_{r,N}}$. The right-hand side function $F$ defined a dicretized ordinary differential equation (ODE) or differential algebraic equation (DAE).
 
@@ -47,8 +47,8 @@ Similarly, /moving horizon estimation (*MHE*)/ problems of the following form ca
 	||h(x_k,u_k) - \tilde{y}_k ||^2_{W_{k}} +\||h_{N}(x_N) - \tilde{y}_N||^2_{W_{N}}
 	\label{eq:mhe_obj}\\[1em]
 \text{s.t.} \quad\quad & x_{k+1} = F(x_k, u_k, z_k),\ \text{for } k = 0, \ldots, N-1 \label{eq:mhe_dynamics}\\[0.5em]
-& x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:mhe_box_states}\\[0.5em]
 & u_k^\text{lo} \leq u_k \leq u_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:mhe_box_controls}\\[0.5em]
+& x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:mhe_box_states}\\[0.5em]
 & r_k^\text{lo} \leq r_k(x_k, u_k) \leq r_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:mhe_path_con}\\[0.5em]
 & r_N^\text{lo} \leq r_N(x_n) \leq r_N^\text{up}. \label{eq:mhe_point_con}
 \end{align}
@@ -58,7 +58,7 @@ In the context of MHE, functions $h$ and $h_N$ denote measurement functions. The
 
 The tool exports highly efficient C-code for solving nonlinear MPC and MHE problems by means of the real-time iteration scheme with Gauss-Newton Hessian approximation. Discretization of the time-continuous ODEs and DAEs is done via shooting techniques. The resulting large but sparse QP can be optionaly condensed and passed to dense linear algebra QP solver [http://www.qpoases.org qpOASES] (embedded variant) that is employing an active set method. Alternatively, one can use:
 - structure exploiting QCQP solver [http://forces.ethz.ch FORCES] that is implementing an interior point method (IPM) or
-- structure exploiting a dual decomposition based QP solver [https://github.com/jfrasch/qpDUNES/wiki qpDUNES] or
+- structure exploiting dual decomposition based QP solver [https://github.com/jfrasch/qpDUNES/wiki qpDUNES] or
 - structure exploiting IPM QP solver [https://github.com/giaf/hpmpc HPMPC].
 
 More details on the implemented algorithms and how the toolkit exports them can be found in the manual or in the [/publications.html publications].

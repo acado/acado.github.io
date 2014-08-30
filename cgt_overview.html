@@ -54,14 +54,14 @@
 	\label{eq:nmpc_obj}\\[1em]
 \text{s.t.} \quad\quad &amp; x_0 = \hat x_0 \label{eq:nmpc_init_con}\\[0.5em]
 &amp; x_{k+1} = F(x_k, u_k, z_k),\ \text{for } k = 0, \ldots, N-1 \label{eq:nmpc_dynamics}\\[0.5em]
-&amp; x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:nmpc_box_states}\\[0.5em]
 &amp; u_k^\text{lo} \leq u_k \leq u_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:nmpc_box_controls}\\[0.5em]
+&amp; x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:nmpc_box_states}\\[0.5em]
 &amp; r_k^\text{lo} \leq r_k(x_k, u_k) \leq r_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:nmpc_path_con}\\[0.5em]
 &amp; r_N^\text{lo} \leq r_N(x_n) \leq r_N^\text{up} \label{eq:nmpc_point_con}
 \end{align}
 \]
 </p><p>Here, \(x\in\text{R}^{n_x}\) denotes the differential state, \(u\in\text{R}^{n_u}\) the control input, \(z\in\text{R}^{n_z}\) the algebraic variable, and \(\hat{x}_0\in\text{R}^{n_x}\) denotes the current state measurement. Reference functions in \(\eqref{eq:nmpc_obj}\) are denoted with \(h\in\text{R}^{n_y}\) and \(h_N\in\text{R}^{n_{y,N}}\), and the weighting matrices are denoted with \(W_k\in\text{R}^{n_y\times n_y}\) and \(W_N\in\text{R}^{n_{y,N}\times n_{y,N}}\). Variables \(\tilde{y}_k\in\text{R}^{n_y}\) and \(\tilde{y}_N\in\text{R}^{n_{y,N}}\) denote time-varying references.</p>
-<p>\(\underline u \leq \overline u\in\text{R}^{n_x}\) and \(\underline x \leq \overline x\in\text{R}^{n_u}\), \(\eqref{eq:nmpc_box_controls}\) and \(\eqref{eq:nmpc_box_states}\), are bounds on control inputs and states control bounds, respectively, that also might change along the horizon.</p>
+<p>Bounds \(\underline u \leq \overline u\in\text{R}^{n_u}\) on control inputs \(\eqref{eq:nmpc_box_controls}\) and \(\underline x \leq \overline x\in\text{R}^{n_x}\) on states \(\eqref{eq:nmpc_box_states}\) can change along the horizon.</p>
 <p>Equations \(\eqref{eq:nmpc_path_con}\) and \(\eqref{eq:nmpc_point_con}\) define path and point constraint, respectively, with constraint functions \(r_k\in\text{R}^{n_{r,k}}\) and \(r_N\in\text{R}^{n_{r,N}}\). The right-hand side function \(F\) defined a dicretized ordinary differential equation (ODE) or differential algebraic equation (DAE).</p>
 <p>Similarly, <i>moving horizon estimation (<b>MHE</b>)</i> problems of the following form can be formulated:</p>
 <p style="text-align:center">
@@ -78,8 +78,8 @@
 	||h(x_k,u_k) - \tilde{y}_k ||^2_{W_{k}} +\||h_{N}(x_N) - \tilde{y}_N||^2_{W_{N}}
 	\label{eq:mhe_obj}\\[1em]
 \text{s.t.} \quad\quad &amp; x_{k+1} = F(x_k, u_k, z_k),\ \text{for } k = 0, \ldots, N-1 \label{eq:mhe_dynamics}\\[0.5em]
-&amp; x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:mhe_box_states}\\[0.5em]
 &amp; u_k^\text{lo} \leq u_k \leq u_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:mhe_box_controls}\\[0.5em]
+&amp; x_k^\text{lo} \leq x_k \leq x_k^\text{up},\ \text{for } k = 0, \ldots, N \label{eq:mhe_box_states}\\[0.5em]
 &amp; r_k^\text{lo} \leq r_k(x_k, u_k) \leq r_k^\text{up},\ \text{for } k = 0, \ldots, N-1 \label{eq:mhe_path_con}\\[0.5em]
 &amp; r_N^\text{lo} \leq r_N(x_n) \leq r_N^\text{up}. \label{eq:mhe_point_con}
 \end{align}
@@ -89,7 +89,7 @@
 <ul>
 <li><p>structure exploiting QCQP solver <a href="http://forces.ethz.ch" target=&ldquo;blank&rdquo;>FORCES</a> that is implementing an interior point method (IPM) or</p>
 </li>
-<li><p>structure exploiting a dual decomposition based QP solver <a href="https://github.com/jfrasch/qpDUNES/wiki" target=&ldquo;blank&rdquo;>qpDUNES</a> or</p>
+<li><p>structure exploiting dual decomposition based QP solver <a href="https://github.com/jfrasch/qpDUNES/wiki" target=&ldquo;blank&rdquo;>qpDUNES</a> or</p>
 </li>
 <li><p>structure exploiting IPM QP solver <a href="https://github.com/giaf/hpmpc" target=&ldquo;blank&rdquo;>HPMPC</a>.</p>
 </li>
@@ -103,7 +103,7 @@
 <p>Embedded integrators with efficient sensitivity propagation are part of the crucial algorithmic tools necessary to implement real-time optimal control. The online linearization of constraints imposing the model equations, is typically the bottleneck of the RTI scheme. Targeting real-time applications, a deterministic runtime for the used integration methods is also rather important. Parameters such as the step size and order of the method are therefore kept fixed. The automatic generation of tailored Explicit Runge-Kutta (ERK) methods using the Variational Differential Equations (VDE) for computing sensitivities has been presented and shown practical in [Houska2011, Vukov2012]. This idea was extended in the more recent work on code generation for Implicit Runge-Kutta (IRK) methods [Quirynen2012a]. Tailored techniques for the efficient computation of their sensitivity information have been discussed in [Quirynen2012]. The application of these embedded, implicit solvers to systems of Differential Algebraic Equations (DAE) and the motivation for continuous output has been presented in [Quirynen2013]. The latter has been shown very useful for the implementation of MHE with multi-rate measurements, although it also has possible applications for NMPC as illustrated in [Quirynen2014a]. A three stage model formulation is discussed in [Quirynen2013a] as a way to exploit common linear subsystems in models for nonlinear optimal control. Novel algorithms can be easily prototyped by employing these auto generated integrators within an optimization framework.</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2014-08-30 15:32:55 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2014-08-30 16:23:21 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>
