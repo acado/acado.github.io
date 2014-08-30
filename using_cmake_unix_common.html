@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Making your own projects using Cmake</title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">ACADO Toolkit</div>
+<div class="menu-item"><a href="index.html">Overview</a></div>
+<div class="menu-item"><a href="features.html">Features</a></div>
+<div class="menu-item"><a href="licensing.html">Licensing</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="developers.html">Developers</a></div>
+<div class="menu-item"><a href="blog.html">Blog</a></div>
+<div class="menu-category">Installation</div>
+<div class="menu-item"><a href="install_linux.html">Linux</a></div>
+<div class="menu-item"><a href="install_osx.html">OS&nbsp;X</a></div>
+<div class="menu-item"><a href="install_windows.html">Windows</a></div>
+<div class="menu-category">Interfaces</div>
+<div class="menu-item"><a href="matlab_overview.html">MATLAB&nbsp;interface</a></div>
+<div class="menu-category">The Code <br /> Generation Tool</div>
+<div class="menu-item"><a href="cgt_overview.html">Overview</a></div>
+<div class="menu-category">Support</div>
+<div class="menu-item"><a href="documentation.html" class="current">Documentation</a></div>
+<div class="menu-item"><a href="extra_support.html">Additional</a></div>
+<div class="menu-category">For developers</div>
+<div class="menu-item"><a href="dev_guide.html">Guidelines</a></div>
+<div class="menu-item"><a href="known_issues.html">Known&nbsp;issues</a></div>
+<div class="menu-item"><a href="getting_involved.html">Getting&nbsp;involved</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>Making your own projects using Cmake</h1>
+</div>
+<p>Here is going to be explained how to setup projects that utilize ACADO. At the moment, this page covers usage of the toolkit from C++, on Linux and OS X operating systems and on Windows while using Cygwin. There are basically two ways to setup a project - a simple one and one more complex but more powerful procedure.</p>
+<h2>A simple way of building ACADO based executables</h2>
+<p>You can put your own C++ files in the <tt>&lt;ACADO_ROOT>/examples/my_examples folder</tt>. The only restriction is that one executable can correspond to only one source (<tt>.cpp</tt>) file. After you put your source file in <tt>my_examples</tt> folder, go to <tt>&lt;ACADO_ROOT>/build</tt> and type:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+cmake ..
+make
+</pre></div></div>
+<p>Once the build process is over, return to <tt>&lt;ACADO_ROOT&gt;/examples/my_examples</tt>. You will find there your executable, i.e. if the name of your source file is <tt>my_nice_code.cpp</tt>, you will find there an executable named <tt>my_nice_code</tt>.</p>
+<h2>Building ACADO based executables outside ACADO source tree</h2>
+<h3>Setting up the environment</h3>
+<p>The first thing you need to do is to make Linux/OS X environment aware of ACADO toolkit. One way of doing this is to add a simple bash script to your environment file.</p>
+<ul>
+<li><p><b>Linux users and Cygwin users</b> need to edit .bashrc file in the home folder.</p>
+</li>
+<li><p><b>OS X users</b> need to edit .bash_profile (or .profile) file in the home folder. In case you do not have such a file on your computer defined, <a href="http://redfinsolutions.com/blog/creating-bashprofile-your-mac" target=&ldquo;blank&rdquo;>here</a> is a short explanation how to create it.</p>
+</li>
+</ul>
+<p>When you open the corresponding file, append the following line to the file:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+source &lt;ACADO_ROOT&gt;/build/acado_env.sh
+</pre></div></div>
+<p>where &lt;ACADO_ROOT&gt; corresponds to the ACADO toolkit root folder, as explained on the installation instructions.</p>
+<p>Afterwards, <b>Linux and Cygwin users</b> should refresh the environment by typing in the terminal </p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+. ~/.bashrc
+</pre></div></div>
+<p><b>OS X users</b> should refresh the environment by typing </p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+. ~/.bash_profile
+</pre></div></div>
+<p>or .profile, where applicable.</p>
+<h3>Making a simple project</h3>
+<p>Now we can start setting up a simple project. We will refer to MY_PROJECT folder as to a folder where you want to put source files and build an executable.</p>
+<ul>
+<li><p>Copy <tt>&lt;ACADO_ROOT>/cmake/FindACADO.cmake</tt> to the MY_PROJECT folder.</p>
+</li>
+<li><p>Create a file <tt>CMakeLists.txt</tt> in the MY_PROJECT folder.</p>
+</li>
+<li><p>Open <tt>CMakeLists.txt</tt> in your favorite text editor and copy the following text into it.</p>
+</li>
+</ul>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+#
+# Project settings
+#
+
+# Minimum required version of cmake
+CMAKE_MINIMUM_REQUIRED( VERSION 2.8 )
+
+# Project name and programming languages used
+PROJECT( MY_COOL_PROJECT CXX )
+
+# CMake module(s) path
+SET( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR} )
+
+#
+# Prerequisites
+#
+FIND_PACKAGE( ACADO REQUIRED )
+
+#
+# Include directories
+#
+INCLUDE_DIRECTORIES( . ${ACADO_INCLUDE_DIRS} )
+
+#
+# Build an executable
+#
+ADD_EXECUTABLE(        &lt;EXEC_NAME&gt; &lt;EXEC_SOURCES&gt; )
+TARGET_LINK_LIBRARIES( &lt;EXEC_NAME&gt; ${ACADO_SHARED_LIBRARIES} )
+SET_TARGET_PROPERTIES( &lt;EXEC_NAME&gt;
+                       PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} )
+</pre></div></div>
+<ul>
+<li><p>Edit &lt;EXEC_NAME&gt; and &lt;EXEC_SOURCES&gt; tags. &lt;EXEC_NAME&gt; tag is the executable name and &lt;EXEC_SOURCES&gt;is the list of source (.cpp) files. For more help with CMake refer to <a href="http://www.cmake.org" target=&ldquo;blank&rdquo;>CMake website</a>.</p>
+</li>
+<li><p>Go again to the terminal, and navigate to the MY_PROJECT folder. Then type:</p>
+</li>
+</ul>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+mkdir build
+cd build
+cmake ..
+make
+cd ..
+</pre></div></div>
+<p>When the build process is over, an executable with the name &lt;EXEC_NAME&gt; should appear in the MY_PROJECT folder.</p>
+<p>You can build more than one application using the same set of commands lying below the comment &ldquo;Build an executable&rdquo;. Please keep in mind that name of the executable, &lt;EXEC_NAME&gt;, has to be unique.</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2014-08-30 21:11:31 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+		  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+</body>
+</html>

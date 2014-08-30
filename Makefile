@@ -4,7 +4,8 @@ DOCS = \
 	matlab_overview matlab_getting_started \
 	documentation extra_support \
 	getting_involved dev_guide known_issues \
-	cgt_overview
+	cgt_overview \
+	using_cmake_unix_common
 HDOCS=$(addsuffix .html, $(DOCS))
 
 all: $(HDOCS) #publications.html
