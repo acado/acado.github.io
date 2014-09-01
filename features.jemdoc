@@ -34,5 +34,7 @@ Comparison between condensing based NMPC solver that employs qpOASES QP solver a
 . H.J. Ferreau, T. Kraus, M. Vukov, W. Saeys, M. Diehl. High-Speed Moving Horizon Estimation based on Automatic Code Generation, Proceedings of the 51th IEEE Conference on Decision and Control, 2012.
 . M. Vukov, W. Van Loock, B. Houska, H.J. Ferreau, J. Swevers, M. Diehl. Experimental Validation of Nonlinear MPC on an Overhead Crane using Automatic Code Generation, The 2012 American Control Conference, Montreal, Canada.
 . Vukov, M., Domahidi, A., Ferreau, H. J., Morari, M., Diehl, M. Auto-generated Algorithms for Nonlinear Model Predictive Control on Long and on Short Horizons, Proceedings of the 52nd Conference on Decision and Control (CDC), 2013.
+. Quirynen, R., Vukov, M., Zanon, M., Diehl, M. (2014). Autogenerating Microsecond Solvers for Non-Standard Nonlinear MPC: a Tutorial Using ACADO Integrators. Optimal Control Applications and Methods.
+. Quirynen, R., Houska, B., Vallerio, M., Telen, D., Logist, F., Van Impe, J., Diehl, M. (2014). Symmetric Algorithmic Differentiation Based Exact Hessian SQP Method and Software for Economic MPC. Proc. 2014 IEEE 53rd Annual Conference on Decision and Control. IEEE CDC 2014. Los Angeles, USA, Dec. 2014.
 
 Please consult [publications.html this] page on how to cite the toolkit.
