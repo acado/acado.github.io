@@ -5,7 +5,7 @@
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>ACADO for MATLAB</title>
+<title>ACADO from MATLAB</title>
 </head>
 <body>
 <table summary="Table for page layout." id="tlayout">
@@ -36,13 +36,13 @@
 </td>
 <td id="layout-content">
 <div id="toptitle">
-<h1>ACADO for MATLAB</h1>
+<h1>ACADO from MATLAB</h1>
 </div>
-<p>ACADO for MATLAB is a MATLAB interface for the ACADO Toolkit. It brings the ACADO Integrators and algorithms for direct optimal control, model predictive control and parameter estimation to MATLAB. ACADO for MATLAB uses the ACADO Toolkit C++ code base and implements methods to communicate with this code base.</p>
+<p>This interface brings the ACADO Integrators and algorithms for direct optimal control, model predictive control and parameter estimation to MATLAB. It uses the ACADO Toolkit C++ code base and implements a thin layer to communicate with this code base.</p>
 <div class="infoblock">
 <div class="blocktitle">Key Features</div>
 <div class="blockcontent">
-<p>Three available interfaces:</p>
+<p>Three available standard interfaces:</p>
 <ul>
 <li><p>Use the stand-alone Runge-Kutta and BDF's integrators in MATLAB</p>
 </li>
@@ -51,11 +51,20 @@
 <li><p>Write your own C++ code as a MEX-function and compile it using ACADO for MATLAB build-in MEX-compiler</p>
 </li>
 </ul>
+<p>ACADO code generation from MATLAB:</p>
+<ul>
+<li><p>SIMexport: generate efficient, customized Runge-Kutta integrators which can be accessed from MATLAB</p>
+</li>
+<li><p>OCPexport: generate efficient, customized OCP solvers which can be accessed from MATLAB</p>
+</li>
+</ul>
 <p>Link your models to ACADO:</p>
 <ul>
 <li><p>Link MATLAB ODE or DAE models</p>
 </li>
 <li><p>Link C++ ODE or DAE models</p>
+</li>
+<li><p>Link C ODE or DAE models with ACADO generated code</p>
 </li>
 <li><p>Provide optional Jacobians for faster calculations</p>
 </li>
@@ -126,7 +135,7 @@ Are these correct [y]/n?
 <h3>Step 3 - Building the ACADO interface</h3>
 <p>Please download the toolkit code. Our suggestion is to always clone the <b>stable</b> branch:</p>
 <ul>
-<li><p>Linux and OS X users can check-out the code using <a href="http://git-scm.com" target=&ldquo;blank&rdquo;>GIT</a> directly from a terminal. Please execute the following command in a terminal:</p>
+<li><p>Linux and OS X users can check-out the code using <a href="http://git-scm.com">GIT</a> directly from a terminal. Please execute the following command in a terminal:</p>
 </li>
 </ul>
 <div class="codeblock">
@@ -134,11 +143,11 @@ Are these correct [y]/n?
 git clone https://github.com/acado/acado.git -b stable ACADOtoolkit
 </pre></div></div>
 <ul>
-<li><p>Windows users can use e.g. <a href="https://code.google.com/p/tortoisegit/" target=&ldquo;blank&rdquo;>TortoiseGit</a>:</p>
+<li><p>Windows users can use e.g. <a href="https://code.google.com/p/tortoisegit/">TortoiseGit</a>:</p>
 <ul>
 <li><p>Open your file manager and make a folder called &ldquo;ACADOtoolkit&rdquo;.</p>
 </li>
-<li><p>Open tortoise git application and fill in the fields as described <a href="https://code.google.com/p/tortoisegit/wiki" target=&ldquo;blank&rdquo;>here</a>:</p>
+<li><p>Open tortoise git application and fill in the fields as described <a href="https://code.google.com/p/tortoisegit/wiki">here</a>:</p>
 <ul>
 <li><p>Enter the URL for cloning. Our suggestion is to always check out <b>stable</b> branch <tt>https:<i></i>github.com/acado/acado.git</tt></p>
 </li>
@@ -155,9 +164,9 @@ git clone https://github.com/acado/acado.git -b stable ACADOtoolkit
 </ul>
 <p>If for any reason you cannot download the code using GIT or you do not want to use GIT (this is not encouraged!), you can download the code in a zip archive</p>
 <ol>
-<li><p>current code from the <b>stable</b> branch <a href="http://www.acadotoolkit.org/zip/acadotoolkit-current-stable.zip" target=&ldquo;blank&rdquo;>acadotoolkit-current-stable.zip</a> or</p>
+<li><p>current code from the <b>stable</b> branch <a href="http://www.acadotoolkit.org/zip/acadotoolkit-current-stable.zip">acadotoolkit-current-stable.zip</a> or</p>
 </li>
-<li><p>current code from the <b>master</b> branch <a href="http://www.acadotoolkit.org/zip/acadotoolkit-current-master.zip" target=&ldquo;blank&rdquo;>acadotoolkit-current-master.zip</a>.</p>
+<li><p>current code from the <b>master</b> branch <a href="http://www.acadotoolkit.org/zip/acadotoolkit-current-master.zip">acadotoolkit-current-master.zip</a>.</p>
 </li>
 </ol>
 <p>Those archives are automatically updated after each successfully compiled and tested commit we push to the GIT repository.</p>
@@ -225,10 +234,10 @@ getting_started;
 convergence achieved.
 </pre></div></div>
 <p>A graph will be drawn with the results which are stored in the variable 'out&rsquo;. You're done!</p>
-<p>Would you like to read more? Download the user <a href="documentation.html" target=&ldquo;blank&rdquo;>manual</a>.</p>
+<p>Would you like to read more? Download the user <a href="documentation.html">manual</a>.</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2014-08-30 15:04:35 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2014-09-01 15:17:12 CEST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>

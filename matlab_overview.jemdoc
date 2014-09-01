@@ -1,18 +1,23 @@
 # jemdoc: menu{MENU}{matlab_overview.html}
-= ACADO for MATLAB
+= ACADO from MATLAB
  
-ACADO for MATLAB is a MATLAB interface for the ACADO Toolkit. It brings the ACADO Integrators and algorithms for direct optimal control, model predictive control and parameter estimation to MATLAB. ACADO for MATLAB uses the ACADO Toolkit C\+\+ code base and implements methods to communicate with this code base.
+This interface brings the ACADO Integrators and algorithms for direct optimal control, model predictive control and parameter estimation to MATLAB. It uses the ACADO Toolkit C\+\+ code base and implements a thin layer to communicate with this code base.
 
 ~~~ 
 {Key Features}
-Three available interfaces:
+Three available standard interfaces:
 -    Use the stand-alone Runge-Kutta and BDF's integrators in MATLAB
 -    Compose your optimization problem in a MATLAB environment with familiar MATLAB syntax using the generic optimal control interface
 -    Write your own C\+\+ code as a MEX-function and compile it using ACADO for MATLAB build-in MEX-compiler
 
+ACADO code generation from MATLAB:
+-    SIMexport: generate efficient, customized Runge-Kutta integrators which can be accessed from MATLAB
+-    OCPexport: generate efficient, customized OCP solvers which can be accessed from MATLAB
+
 Link your models to ACADO:
 -    Link MATLAB ODE or DAE models
 -    Link C\+\+ ODE or DAE models
+-    Link C ODE or DAE models with ACADO generated code
 -    Provide optional Jacobians for faster calculations
 ~~~
 
