@@ -61,5 +61,19 @@ ACADO toolkit and ACADO for MATLAB are open-source software, so you can use it f
   booktitle = {Proceedings of the 52nd Conference on Decision and Control (CDC)},
   year = {2013}
 }
+
+@Article{Quirynen2014a,
+  Title = {{A}utogenerating {M}icrosecond {S}olvers for {N}onlinear {MPC}: a {T}utorial {U}sing {ACADO} {I}ntegrators},
+  Author = {R. Quirynen and M. Vukov and M. Zanon and M. Diehl},
+  Journal = {Optimal Control Applications and Methods},
+  Year = {2014}
+}
+
+@InProceedings{Quirynen2014c,
+  Title = {{S}ymmetric {A}lgorithmic {D}ifferentiation {B}ased {E}xact {H}essian {SQP} {M}ethod and {S}oftware for {E}conomic {MPC}},
+  Author = {Quirynen, R. and Houska, B. and Vallerio, M. and Telen, D. and Logist, F. and Van Impe, J. and Diehl, M.},
+  Booktitle = {{Conference on Decision and Control}},
+  Year = {2014}
+}
 ~~~
 
