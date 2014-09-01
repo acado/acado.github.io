@@ -5,7 +5,7 @@ Here is explained how to download, compile and use ACADO toolkit with [http://ww
 
 ~~~
 {MATLAB installation}
-The instructions below are for building of the C\+\+ library. If you are looking for the instructions on how to use the MATLAB interface, please /[matlab_overview.html click here]/.
+The instructions below are for building of the C\+\+ library. If you are looking for the instructions on how to install and use the MATLAB interface, please /[matlab_overview.html click here]/.
 ~~~
 
 == Prerequisites
