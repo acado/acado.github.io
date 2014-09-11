@@ -77,12 +77,16 @@ INCLUDE_DIRECTORIES( . ${ACADO_INCLUDE_DIRS} )
 # Build an executable
 #
 ADD_EXECUTABLE(        <EXEC_NAME> <EXEC_SOURCES> )
+# Linux and OS X
 TARGET_LINK_LIBRARIES( <EXEC_NAME> ${ACADO_SHARED_LIBRARIES} )
+# Windows
+#TARGET_LINK_LIBRARIES( <EXEC_NAME> ${ACADO_STATIC_LIBRARIES} )
 SET_TARGET_PROPERTIES( <EXEC_NAME>
                        PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} )
 ~~~~~~
 
 - Edit <EXEC\_NAME> and <EXEC\_SOURCES> tags. <EXEC_NAME> tag is the executable name and <EXEC\_SOURCES>is the list of source (.cpp) files. For more help with CMake refer to [http://www.cmake.org CMake website].
+- If you are using Windows, make sure that you link your app against static libraries.
 - Go again to the terminal, and navigate to the MY\_PROJECT folder. Then type:
 ~~~
 {}{}

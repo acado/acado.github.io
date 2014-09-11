@@ -112,12 +112,17 @@ INCLUDE_DIRECTORIES( . ${ACADO_INCLUDE_DIRS} )
 # Build an executable
 #
 ADD_EXECUTABLE(        &lt;EXEC_NAME&gt; &lt;EXEC_SOURCES&gt; )
+# Linux and OS X
 TARGET_LINK_LIBRARIES( &lt;EXEC_NAME&gt; ${ACADO_SHARED_LIBRARIES} )
+# Windows
+#TARGET_LINK_LIBRARIES( &lt;EXEC_NAME&gt; ${ACADO_STATIC_LIBRARIES} )
 SET_TARGET_PROPERTIES( &lt;EXEC_NAME&gt;
                        PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} )
 </pre></div></div>
 <ul>
 <li><p>Edit &lt;EXEC_NAME&gt; and &lt;EXEC_SOURCES&gt; tags. &lt;EXEC_NAME&gt; tag is the executable name and &lt;EXEC_SOURCES&gt;is the list of source (.cpp) files. For more help with CMake refer to <a href="http://www.cmake.org" target=&ldquo;blank&rdquo;>CMake website</a>.</p>
+</li>
+<li><p>If you are using Windows, make sure that you link your app against static libraries.</p>
 </li>
 <li><p>Go again to the terminal, and navigate to the MY_PROJECT folder. Then type:</p>
 </li>
@@ -134,7 +139,7 @@ cd ..
 <p>You can build more than one application using the same set of commands lying below the comment &ldquo;Build an executable&rdquo;. Please keep in mind that name of the executable, &lt;EXEC_NAME&gt;, has to be unique.</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2014-09-02 01:01:42 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2014-09-11 12:37:22 CEST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>
