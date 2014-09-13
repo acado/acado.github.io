@@ -34,14 +34,9 @@ cp /usr/bin/make.exe /usr/bin/gmake.exe
 
 == Installation for usage with Visual Studio
 
-~~~
-{NOTE}
-Initial efforts have been made to compile ACADO with Visual Studio to be used from C\+\+. However, our time and man power are quite limited plus our main development platforms are Linux and OS X. We expect community to contribute here. In case you want to contribute, please take a look at [extra_support.html this] webpage. Thank you for your understanding!
-~~~
-
 === Prerequisites
 
-- Visual Studio Express Edition can be obtained [http://www.microsoft.com/visualstudio/en-us here].
+- Visual Studio Express Edition can be obtained [http://www.microsoft.com/visualstudio/en-us here]. Please always download the latest version.
 - [http://git-scm.com/ GIT] client, called tortoisegit, can be downloaded [https://code.google.com/p/tortoisegit/ here].
 - A tool for building the source code, called CMake, can be downloaded from [http://www.cmake.org/cmake/resources/software.html this] webpage.
 - Windows binaries for the visualization program Gnuplot can be downloaded [http://sourceforge.net/projects/gnuplot/files/gnuplot/ here].
